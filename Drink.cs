@@ -15,5 +15,12 @@ namespace CET2007_Week3_Workshop
         {
             Console.WriteLine("Drink: " + Name + " (" + Size + ") - £" + Price.ToString("F2"));
         }
+
+        public override double CalculateTotal(int quantity)
+        {
+            double subtotal = Price * quantity;
+            double tax = subtotal * 0.05;   // 5 percent tax
+            return subtotal + tax;
+        }
     }
 }

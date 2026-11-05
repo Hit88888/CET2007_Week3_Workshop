@@ -2,7 +2,7 @@
 
 namespace CET2007_Week3_Workshop
 {
-    public class MenuItem
+    public abstract class MenuItem
     {
         public string Name { get; set; }
         public double Price { get; set; }
@@ -13,10 +13,12 @@ namespace CET2007_Week3_Workshop
             Price = price;
         }
 
-        // virtual means child classes can replace this method
         public virtual void Describe()
         {
             Console.WriteLine(Name + " - £" + Price.ToString("F2"));
         }
+
+        // Rule: every child class must write its own version of this
+        public abstract double CalculateTotal(int quantity);
     }
 }

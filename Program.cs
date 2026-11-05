@@ -21,6 +21,15 @@ namespace CET2007_Week3_Workshop
                 item.Describe();
             }
 
+            Console.WriteLine();
+            Console.WriteLine("=== Order Totals ===");
+
+            Meal burger = new Meal("Burger", 5.99);
+            Drink cola = new Drink("Cola", "500ml", 1.50);
+
+            Console.WriteLine("2 Burgers: £" + burger.CalculateTotal(2).ToString("F2"));
+            Console.WriteLine("3 Colas: £" + cola.CalculateTotal(3).ToString("F2"));
+
             Console.ReadLine(); // keeps the window open
         }
     }
