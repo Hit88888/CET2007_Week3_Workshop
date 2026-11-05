@@ -67,6 +67,19 @@ namespace CET2007_Week3_Workshop
             processor.ProcessPayment(total, itemName);
             notifier.Notify("Order confirmed for " + itemName + ". Total £" + total.ToString("F2") + ".");
 
+            Console.WriteLine();
+            Console.WriteLine("=== Checkout Demonstration ===");
+
+            Checkout checkout = new Checkout();
+
+            double basic = checkout.PlaceOrder(burger, 2);
+            double discounted = checkout.PlaceOrder(burger, 2, 10);
+            double withDelivery = checkout.PlaceOrder(burger, 2, 10, 2.50);
+
+            Console.WriteLine("Basic total for 2 burgers: £" + basic.ToString("F2"));
+            Console.WriteLine("With 10% discount: £" + discounted.ToString("F2"));
+            Console.WriteLine("With 10% discount + £2.50 delivery: £" + withDelivery.ToString("F2"));
+
             Console.ReadLine(); // keeps the window open
         }
     }
